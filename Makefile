@@ -8,19 +8,26 @@ initdb:
 connect:
 	sqlplus SYSTEM/$(PASSWORD)@localhost:1521/XE
 
+testconnect:
+	docker exec -it oracle sqlplus test/test@localhost:1521/XEPDB1
+
 resetpassword:
 	docker exec oracle resetPassword $(PASSWORD)
 
 exportdata:
 	chmod 777 dump
 	docker exec -it oracle bash -c "sqlplus -S SYSTEM/letmein@localhost/XEPDB1 @/tmp/dump/setup.sql"
-	docker exec oracle expdp test/test@XEPDB1 dumpfile=export.dmp directory=DUMP_DIR logfile=export.log
+	docker exec oracle expdp test/test@XEPDB1 dumpfile=export.dmp directory=DUMP_DIR logfile=export.log CONTENT=ALL
 
 dmp2sql: clean exportdata
 	docker exec oracle impdp test/test@XEPDB1 dumpfile=export.dmp directory=DUMP_DIR sqlfile=ddl.sql
 
+sqlcl: # based on sample-data
+	docker run --rm --link oracle -it container-registry.oracle.com/database/sqlcl:latest test/test@oracle:1521/XEPDB1
+
 shell:
 	docker exec -it oracle /bin/sh
+	#docker cp eager_kirch:/opt/oracle/sql_scripts/COUNTRIES_DATA_TABLE.csv .
 
 clean:
 	rm -f dump/*.log dump/*.dmp dump/ddl.sql
