@@ -30,7 +30,6 @@ sqlcl: # based on sample-data
 
 shell:
 	docker exec -it oracle /bin/sh
-	#docker cp eager_kirch:/opt/oracle/sql_scripts/COUNTRIES_DATA_TABLE.csv .
 
 clean:
 	rm -f dump/*.log dump/*.dmp dump/ddl.sql
