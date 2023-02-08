@@ -3,7 +3,6 @@ IMAGE := gvenzl/oracle-xe:full-faststart
 
 initdb:
 	docker run --rm --name oracle -p 1521:1521 -e ORACLE_PASSWORD=$(PASSWORD) -v $(PWD)/dump:/tmp/dump -v $(PWD)/sample-data:/container-entrypoint-initdb.d $(IMAGE) | tee initdb.txt
-	# https://github.com/gvenzl/oci-oracle-xe#startup-scripts goes further
 
 connect:
 	sqlplus SYSTEM/$(PASSWORD)@localhost:1521/XE

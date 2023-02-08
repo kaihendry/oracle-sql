@@ -1,5 +1,5 @@
 ;;; 
-Import: Release 21.0.0.0.0 - Production on Thu Feb 2 09:49:41 2023
+Import: Release 21.0.0.0.0 - Production on Wed Feb 8 10:15:30 2023
 Version 21.3.0.0.0
 
 Copyright (c) 1982, 2021, Oracle and/or its affiliates.  All rights reserved.
@@ -15,4 +15,4 @@ Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
 Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
 Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
 Processing object type SCHEMA_EXPORT/STATISTICS/MARKER
-Job "TEST"."SYS_SQL_FILE_FULL_01" successfully completed at Thu Feb 2 09:49:46 2023 elapsed 0 00:00:03
+Job "TEST"."SYS_SQL_FILE_FULL_01" successfully completed at Wed Feb 8 10:15:35 2023 elapsed 0 00:00:02
