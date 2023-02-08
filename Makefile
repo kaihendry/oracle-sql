@@ -11,6 +11,9 @@ connect:
 testconnect:
 	docker exec -it oracle sqlplus test/test@localhost:1521/XEPDB1
 
+sqlplus:
+	docker run -it --entrypoint sqlplus gvenzl/oracle-xe:21-slim-faststart
+
 resetpassword:
 	docker exec oracle resetPassword $(PASSWORD)
 
