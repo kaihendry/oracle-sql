@@ -32,3 +32,6 @@ shell:
 
 clean:
 	rm -f dump/*.log dump/*.dmp dump/ddl.sql
+
+unload:
+	for i in regions countries cities currencies currencies_countries; do ./unload.sh $$i; done
