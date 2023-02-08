@@ -1,3 +1,4 @@
+connect test/test@XEPDB1;
 Insert into REGIONS (REGION_ID,NAME) values ('AF','Africa');
 Insert into REGIONS (REGION_ID,NAME) values ('AN','Antarctica');
 Insert into REGIONS (REGION_ID,NAME) values ('AS','Asia');

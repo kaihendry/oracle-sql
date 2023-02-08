@@ -1,3 +1,4 @@
+connect test/test@XEPDB1;
 Insert into CURRENCIES (CURRENCY_ID,NAME,OFFICIAL_NAME,SYMBOL) values ('AED','UAE Dirham',null,'?.?');
 Insert into CURRENCIES (CURRENCY_ID,NAME,OFFICIAL_NAME,SYMBOL) values ('AFN','Afghani',null,'?');
 Insert into CURRENCIES (CURRENCY_ID,NAME,OFFICIAL_NAME,SYMBOL) values ('ALL','Lek',null,'L');
